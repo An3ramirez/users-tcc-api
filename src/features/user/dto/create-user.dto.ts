@@ -5,25 +5,25 @@ export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
   @ApiProperty()
-  firstName: string;
+  first_name: string;
 
   @IsString()
   @IsNotEmpty()
   @ApiProperty()
-  lastName: string;
+  last_name: string;
 
   @IsNumber()
   @IsNotEmpty()
   @ApiProperty()
-  documentType: number;
+  document_type_id: number;
 
   @IsNumber()
   @IsNotEmpty()
   @ApiProperty()
-  documentNumber: number;
+  document_number: number;
 
   @IsNumber()
   @IsNotEmpty()
   @ApiProperty()
-  gender: number;
+  gender_id: number;
 }

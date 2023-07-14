@@ -21,14 +21,14 @@ export class UserService {
   }
 
   async create(userData: CreateUserDto): Promise<UserEntity> {
-    const { documentNumber } = userData;
+    const { document_number } = userData;
     const existingUser = await this.userRepository.findOneBy({
-      documentNumber,
+      document_number,
     });
 
     if (existingUser) {
       throw new BadRequestException(
-        `User with document number ${existingUser.documentNumber} already exists`,
+        `User with document number ${existingUser.document_number} already exists`,
       );
     }
 

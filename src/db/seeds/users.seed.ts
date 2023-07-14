@@ -6,25 +6,25 @@ export async function createUsers(datasource: DataSource) {
 
   const users = [
     {
-      firstName: 'John',
-      lastName: 'Doe',
-      documentType: 1,
-      documentNumber: 123456789,
-      gender: 1,
+      first_name: 'John',
+      last_name: 'Doe',
+      document_type_id: 1,
+      document_number: 123456789,
+      gender_id: 1,
     },
     {
-      firstName: 'Jane',
-      lastName: 'Smith',
-      documentType: 2,
-      documentNumber: 987654321,
-      gender: 2,
+      first_name: 'Jane',
+      last_name: 'Smith',
+      document_type_id: 1,
+      document_number: 987654321,
+      gender_id: 1,
     },
   ];
   const savedUsers: UserEntity[] = [];
 
   for (const user of users) {
     const existingUser = await userRepository.findOne({
-      where: { documentNumber: user.documentNumber },
+      where: { document_number: user.document_number },
     });
 
     if (!existingUser) {

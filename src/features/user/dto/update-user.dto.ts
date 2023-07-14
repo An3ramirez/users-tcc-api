@@ -4,21 +4,21 @@ import { ApiProperty } from '@nestjs/swagger';
 export class UpdateUserDto {
   @IsString()
   @ApiProperty()
-  firstName: string;
+  first_name: string;
 
   @IsString()
   @ApiProperty()
-  lastName: string;
+  last_name: string;
 
   @IsNumber()
   @ApiProperty()
-  documentType: number;
+  document_type_id: number;
 
   @IsNumber()
   @ApiProperty()
-  documentNumber: number;
+  document_number: number;
 
   @IsNumber()
   @ApiProperty()
-  gender: number;
+  gender_id: number;
 }

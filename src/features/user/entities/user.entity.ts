@@ -1,4 +1,12 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
+import { DocumentTypeEntity } from './document-type.entity';
+import { GenderEntity } from './gender.entity';
 
 @Entity('user')
 export class UserEntity {
@@ -6,17 +14,25 @@ export class UserEntity {
   id: number;
 
   @Column()
-  firstName: string;
+  first_name: string;
 
   @Column()
-  lastName: string;
+  last_name: string;
 
   @Column()
-  documentType: number;
+  document_type_id: number;
 
   @Column({ type: 'bigint' })
-  documentNumber: number;
+  document_number: number;
 
   @Column()
-  gender: number;
+  gender_id: number;
+
+  @ManyToOne(() => DocumentTypeEntity, { nullable: false })
+  @JoinColumn({ name: 'document_type_id', referencedColumnName: 'id' })
+  documentType: DocumentTypeEntity;
+
+  @ManyToOne(() => GenderEntity, { nullable: false })
+  @JoinColumn({ name: 'gender_id', referencedColumnName: 'id' })
+  gender: GenderEntity;
 }
