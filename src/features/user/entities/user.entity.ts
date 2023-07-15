@@ -22,7 +22,7 @@ export class UserEntity {
   @Column()
   document_type_id: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'bigint', unique: true })
   document_number: number;
 
   @Column()

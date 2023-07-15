@@ -10,14 +10,14 @@ export async function createUsers(datasource: DataSource) {
       last_name: 'Doe',
       document_type_id: 1,
       document_number: 123456789,
-      gender_id: 1,
+      gender_id: 2,
     },
     {
       first_name: 'Jane',
       last_name: 'Smith',
       document_type_id: 1,
       document_number: 987654321,
-      gender_id: 1,
+      gender_id: 2,
     },
   ];
   const savedUsers: UserEntity[] = [];
